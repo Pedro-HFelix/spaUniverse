@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    font-size: clamp(40%,1% + 2vw,62.5%);
+    --img-home: url(/assets/imgs/mountains-universe-1.png);
+    --img-universe: url(/assets/imgs/mountains-universe02.png);
+    --img-exploitation: url(/assets/imgs/mountains-universe-3.png);
+    --base-text-color : #C4C4CC;
+    --select-Page-text-color : #FFF;
+    --button-hover-color: #02799D;
+}
+
+#app{
+    height: 100vh;
+    background-size: cover; 
+    background-position: center; 
+    color: var(--base-text-color);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    gap: 30.8rem;
+}
+
+html:has(.home)  #app{
+    gap: 38.8rem;
+}
+
+html:has(.home) #app{
+    background-image: var(--img-home);
+}
+html:has(.universe) #app{
+    background-image: var(--img-universe);
+}
+html:has(.exploitation) #app{
+    background-image: var(--img-exploitation);
+}
+
+html:has(.home) #home-text{
+    color: var(--select-Page-text-color);    
+    font-size: 2.4rem;
+}
+html:has(.universe) #universe-text{
+    color: var(--select-Page-text-color);    
+    font-size: 2.4rem;
+}
+html:has(.exploitation) #exploitation-text{
+    color: var(--select-Page-text-color);    
+    font-size: 2.4rem;
+}
+
+menu{
+    height: 12.2rem;
+    width: 128rem;
+    display: flex;
+    flex-direction: row;    
+    list-style: none;
+    gap: 5.36rem;
+    font-size: 2.16rem;
+    padding-top: 4rem;
+    padding-left: 7.2rem;
+}
+
+menu a{
+    text-decoration: none;
+    color: var(--base-text-color);
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding-left: 10.2rem;
+}
+
+html:has(.home) main{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+ main p:nth-child(2){
+    width: 64.8rem;
+    font-size: 1.8rem;
+}
+
+main p:nth-child(1){
+    font-size: 4.8rem;
+}
+
+main button{
+    background: transparent;
+    color: var(--base-text-color);
+    border:solid var(--base-text-color);
+    display: inline-flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid var(--base-text-color);
+    transition: background-color .4s ease-in, color .4s ease-out;
+    font-size: 1.4rem;
+}
+
+main button:hover{
+    background-color: var(--base-text-color);
+    color: var(--button-hover-color);
+}
